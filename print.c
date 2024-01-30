@@ -6,14 +6,24 @@
  */
 int _printf(const char *format, ...)
 {
-	int count = 0;
+	va_list ap;
+	int count;
 
-	while ()
+	va_start(ap, format);
+	count = 0;
+
+	while (*format != '\0')
 	{
-		if ()
+		if (*format == '%')
 		{
-
+			count += print_format(*(++format), ap);
 		}
+		else
+		{
+			count += write(1, format, 1);
+		}
+		++format;
 	}
+	va_end(ap);
 	return (count);
 }
