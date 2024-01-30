@@ -75,7 +75,7 @@ int print_digit(long n, int base)
 	}
 	else if (n < base)
 		return (print_char(symbols[n]));
-	else
+	else if (n > base)
 	{
 		count = print_digit(n / base, base);
 		return (count + print_digit(n % base, base));
