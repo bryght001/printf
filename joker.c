@@ -11,7 +11,6 @@ int print_char(int c)
 
 	return (write(1, &c, 1));
 }
-
 /**
  * print_str - Prints a string character by character
  * @str: The string to print
